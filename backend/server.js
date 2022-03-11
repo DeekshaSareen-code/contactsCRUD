@@ -6,8 +6,6 @@ let bodyParser = require('body-parser');
 // Express Route
 const contactRoute = require('../backend/routes/contact.route')
 
-// Configure mongoDB Database
-
 // Connecting MongoDB Database
 var url = "mongodb+srv://deeksha:deeksha@cluster0.yfo0v.mongodb.net/contactsDb?retryWrites=true&w=majority";
 var mongoDB = 'mongodb://127.0.0.1/my_database';
@@ -39,7 +37,6 @@ const server = app.listen(port, () => {
 console.log('Connected to port ' + port)
 })
 
-// 404 Error
 app.use((req, res, next) => {
 res.status(404).send('Error 404!')
 });

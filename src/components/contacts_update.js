@@ -1,6 +1,3 @@
-// Edit Contact Component for update student data
-
-// Import Modules
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Contacts_form from "./contacts_form";
