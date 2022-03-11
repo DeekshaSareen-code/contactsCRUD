@@ -38,3 +38,6 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
+### Notes
+Had trouble sending the image from the form to mongoDB so excluded that functionality.
+Unable to run application on localhost due to port issue. Hence running it directly on the mondodb server
