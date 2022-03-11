@@ -6,6 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Stack
+
+Frontend: React js
+Backend: Node js
+Database: Mongo db
+
 ### `npm start`
 
 Runs the app in the development mode.\
