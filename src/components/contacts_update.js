@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Contacts_form from "./contacts_form";
-
+import {  useParams } from 'react-router-dom';
 // EditContact Component
 const EditContact = (props) => {
 const [formValues, setFormValues] = useState({
@@ -13,13 +13,12 @@ const [formValues, setFormValues] = useState({
 	email: "",
 	phone: "",
 });
-	
+const { id } = useParams();
 //onSubmit handler
 const onSubmit = (contactObject) => {
 	axios
 	.put(
-		"http://localhost:4000/contacts/update-contact/" +
-		props.match.params.id,
+		"http://localhost:4000/contacts/update-contact/" +id,
 		contactObject
 	)
 	.then((res) => {
@@ -28,7 +27,6 @@ const onSubmit = (contactObject) => {
 		props.history.push("/contact-list");
 		} else Promise.reject();
 	})
-	.catch((err) => alert("Something went wrong"));
 };
 
 // Load data from server and reinitialize student form
@@ -36,14 +34,14 @@ useEffect(() => {
 	axios
 	.get(
 		"http://localhost:4000/contacts/update-contact/"
-		+ props.match.params.id
+		+ id
 	)
 	.then((res) => {
 		const { fname, lname, email, phone } = res.data;
 		setFormValues({ fname,lname, email, phone });
 	})
 	.catch((err) => console.log(err));
-}, []);
+}, [id]);
 
 // Return Contact form
 return (
